@@ -8,7 +8,11 @@ if ~/.config/nvim/ doesnt exist just make a new folder
 
 ### Keybinds
 Ctrl + f Focus on file tree
+
 Ctrl + t Toggle file tree
+
 Ctrl + k Search for files
+
 Ctrl + j Open terminal
+
 Ctrl + s Save File
