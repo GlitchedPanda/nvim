@@ -22,10 +22,12 @@ vim.g.loaded_netrwPlugin = 1
 -- lazy setup
 
 require("lazy").setup({
-	"stevearc/oil.nvim",
 	"RRethy/vim-illuminate",
 	"tpope/vim-surround",
-	"vim-airline/vim-airline",
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-web-devicons" }
+	},
 	"tc50cal/vim-terminal",
 	"lambdalisue/suda.vim",
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
@@ -49,6 +51,7 @@ require("lazy").setup({
     		"nvim-telescope/telescope.nvim",
       		dependencies = { 'nvim-lua/plenary.nvim' }
     	},
+	"nvim-treesitter/nvim-treesitter-context",
 	{
   		"L3MON4D3/LuaSnip",
   		dependencies = { "rafamadriz/friendly-snippets" },
@@ -75,6 +78,12 @@ vim.keymap.set('n', '<C-j>', '<CMD>TerminalSplit bash<CR>', { noremap = true })
 -- plugin setup
 
 require('nvim-web-devicons').setup()
+
+require('lualine').setup {
+	options = {
+		theme = 'nightfly'
+	}
+}
 
 require('mason').setup()
 require('mason-lspconfig').setup {
