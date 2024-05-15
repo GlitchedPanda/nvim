@@ -62,7 +62,7 @@ require("lazy").setup({
     	"neovim/nvim-lspconfig",
 	"hrsh7th/nvim-cmp",
   	"hrsh7th/cmp-nvim-lsp",
-	"neovim/nvim-lspconfig",
+	"Hoffs/omnisharp-extended-lsp.nvim",
 })
 
 -- colorscheme
@@ -87,7 +87,7 @@ require('lualine').setup {
 
 require('mason').setup()
 require('mason-lspconfig').setup {
-    ensure_installed = { 'typos_lsp', 'clangd', 'lua_ls' },
+    ensure_installed = { 'typos_lsp', 'clangd', 'lua_ls', 'omnisharp' },
 }
 
 require('luasnip.loaders.from_vscode').lazy_load()
@@ -123,9 +123,21 @@ require('lspconfig').clangd.setup {
 require('lspconfig').lua_ls.setup {
 	capabilities = capabilities
 }
-require('lspconfig').asm_lsp.setup {
+require('lspconfig').gdscript.setup {
 	capabilities = capabilities
 }
+
+require("lspconfig").omnisharp.setup({
+    capabilities = capabilities,
+    cmd = { vim.fn.stdpath("data") .. "/mason/packages/omnisharp/omnisharp" },
+    enable_editorconfig_support = true,
+    enable_ms_build_load_projects_on_demand = false,
+    enable_roslyn_analyzers = true,
+    organize_imports_on_format = true,
+    enable_import_completion = true,
+    sdk_include_prereleases = true,
+    analyze_open_documents_only = true,
+})
 
 -- nvim tree config
 
