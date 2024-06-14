@@ -28,8 +28,6 @@ require("lazy").setup({
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-web-devicons" }
 	},
-	"tc50cal/vim-terminal",
-	"lambdalisue/suda.vim",
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	"mattn/emmet-vim",
 	"preservim/vimux",
@@ -73,7 +71,6 @@ vim.cmd.colorscheme 'catppuccin'
 
 vim.keymap.set('n', '<C-s>', '<CMD>w<CR>', { noremap = true })
 vim.keymap.set('n', '<C-k>', '<CMD>Telescope find_files<CR>', { noremap = true })
-vim.keymap.set('n', '<C-j>', '<CMD>TerminalSplit bash<CR>', { noremap = true })
 
 -- plugin setup
 
