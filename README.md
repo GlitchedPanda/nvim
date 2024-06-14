@@ -14,8 +14,6 @@ Ctrl + t Toggle file tree
 
 Ctrl + k Search for files
 
-Ctrl + j Open terminal
-
 Ctrl + s Save File
 
 ### How to Use it With Godot
