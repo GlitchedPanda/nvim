@@ -124,6 +124,10 @@ require('lspconfig').gdscript.setup {
 	capabilities = capabilities
 }
 
+require('lspconfig').jedi_language_server.setup {
+	capabilities = capabilities
+}
+
 require("lspconfig").omnisharp.setup({
     capabilities = capabilities,
     cmd = { vim.fn.stdpath("data") .. "/mason/packages/omnisharp/omnisharp" },
