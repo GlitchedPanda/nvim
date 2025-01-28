@@ -84,7 +84,7 @@ require('lualine').setup {
 
 require('mason').setup()
 require('mason-lspconfig').setup {
-    ensure_installed = { 'typos_lsp', 'clangd', 'lua_ls', 'omnisharp' },
+    ensure_installed = { 'typos_lsp', 'clangd', 'rust_analyzer', 'lua_ls', 'omnisharp' },
 }
 
 require('luasnip.loaders.from_vscode').lazy_load()
@@ -115,6 +115,9 @@ require('lspconfig').typos_lsp.setup {
 	capabilities = capabilities
 }
 require('lspconfig').clangd.setup {
+	capabilities = capabilities
+}
+require('lspconfig').rust_analyzer.setup {
 	capabilities = capabilities
 }
 require('lspconfig').lua_ls.setup {
